@@ -5,7 +5,9 @@ Flat Pyramid-style Metronome using HTML5 **Web Audio API** and **CSS3 Keyframe A
 *Forked from Dylan Paulus' Pen "[Simple Metronome](http://codepen.io/ganderzz/pen/Ezlfu/)", with the help of Chris Wilson's Tut "[Scheduling Web Audio with Precision](http://www.html5rocks.com/en/tutorials/audio/scheduling/)".
 Design based on Alex Bergin's "[M-Metronome](http://codepen.io/abergin/pen/efbCD)" .*
 
-![alt text](https://getsongbpm.com/img/site/metronome.jpg "GetSong-Metronome Illustration")
+![alt text][illustration]
+
+[illustration]: https://getsongbpm.com/img/site/metronome.jpg "GetSong-Metronome Illustration"
 
 ## Features
 
