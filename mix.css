@@ -1,0 +1,373 @@
+/* Defaults */
+body {
+	background:#1a1c27;
+}
+
+button:hover {
+	cursor:pointer;
+}
+
+#gsbpm_metronome {
+	bottom: 0;
+	height: 450px;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 300px;
+}
+
+/* Metronome */
+/* Body */
+.metronome_body {
+    position: absolute;
+    width: 65px;
+    border-bottom: 280px solid #34495E;
+    border-right: 65px solid transparent;
+    border-left: 65px solid transparent;
+}
+
+.metronome_body:after {
+    content:"";
+    position: absolute;
+    top: 16px;
+    height: 190px;
+    border-left: 4px solid #34495E;
+    margin-left: 30px;
+}
+
+/* Meter */
+.metronome_body:before {
+    content:"";
+    position: absolute;
+    width: 50px;
+    border-right: 40px solid transparent;
+    border-left: 40px solid transparent;
+    border-bottom: 210px solid #21C2F8;
+    margin-top: 8px;
+    margin-left: -33px;
+}
+
+.scale {
+    width: 12px;
+    height: 190px;
+    position: absolute;
+	margin-left: 91px;
+    margin-top: 15px;
+}
+
+.scale span {
+    position: absolute;
+    width: 100%;
+    border-top: 2px solid #34495E;
+}
+
+.scale span:nth-of-type(1){
+    top: 100%;
+}
+
+.scale span:nth-of-type(2){
+    top: 66%;
+}
+
+.scale span:nth-of-type(3){
+    top: 44%;
+}
+
+.scale span:nth-of-type(4){
+    top: 29%;
+}
+
+.scale span:nth-of-type(5){
+    top: 19%;
+}
+
+.scale span:nth-of-type(6){
+    top: 19%;
+}
+
+.scale span:nth-of-type(7){
+    top: 12%;
+}
+
+.scale span:nth-of-type(8){
+    top: 7%;
+}
+
+.scale span:nth-of-type(9){
+    top: 0%;
+}
+
+/* Pendulum */
+.swinging_pendulum {
+    height: 250px;
+    border-left: 6px solid #ddd;
+    margin-left: 94px;
+    margin-top: 8px;
+    position: absolute;
+    z-index: 90;
+}
+
+.swinging_pendulum:after {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 30px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #ddd;
+    margin-top: 235px;
+    margin-left: -18px;
+}
+
+.swinging_pendulum:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 24px;
+    background-color: #999;
+    margin-top: 70px;
+    margin-left: -15px;
+
+}
+
+.swinging_pendulum div {
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #999;
+    margin-left: -11px;
+    margin-top: 202px;
+}
+
+.animate_pendulum {
+	display: block;
+
+	-webkit-animation-name: pendulum-tick;
+	-webkit-animation-duration: 1.5s;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-play-state: running;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-transform-origin: center 84%;
+	-webkit-animation-direction: linear;
+	
+	-moz-animation-name: pendulum-tick;
+	-moz-animation-duration: 1.5s;
+	-moz-animation-direction: alternate;
+	-moz-animation-play-state: running;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-timing-function: ease-in-out;
+	-moz-transform-origin: center 84%;
+	-moz-animation-direction: linear;
+	
+	-o-animation-name: pendulum-tick;
+	-o-animation-duration: 1.5s;
+	-o-animation-direction: alternate;
+	-o-animation-play-state: running;
+	-o-animation-iteration-count: infinite;
+	-o-animation-timing-function: ease-in-out;
+	-o-transform-origin: center 84%;
+	-o-animation-direction: linear;
+
+	animation-name: pendulum-tick;
+	animation-duration: 1.5s;
+	animation-direction: alternate;
+	animation-play-state: running;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	transform-origin: center 84%;
+	animation-direction: linear;
+	
+}
+
+@-webkit-keyframes pendulum-tick {
+	0%   { -webkit-transform: rotate(-30deg); }
+	100% { -webkit-transform: rotate(30deg); }
+}
+
+@-moz-keyframes pendulum-tick {
+	0%   { -moz-transform: rotate(-30deg); }
+	100% { -moz-transform: rotate(30deg); }
+}
+
+@-o-keyframes pendulum-tick {
+	0%   {-o- transform: rotate(-30deg); }
+	100% { -o-transform: rotate(30deg); }
+}
+
+@keyframes pendulum-tick {
+	0%   { transform: rotate(-30deg); }
+	100% { transform: rotate(30deg); }
+}
+
+/* Tempo control */
+.bpm-control {
+    width: 195px;
+    margin-top: 280px;
+	text-align: center;
+	border-bottom: 80px solid #34495E; 
+	border-left: 15px solid transparent; 
+	border-right: 15px solid transparent; 
+	height: 0; 
+	margin-left: -15px;
+	position:absolute;
+}
+
+
+.slow-down, .speed-up {
+	background:#21C2F8;
+	color:#fff;
+	width:20%;
+	font-weight:bold;
+	border-radius:20px;
+	width:40px;
+	height:40px;
+	border:none;
+	transition: background-color 300ms ease-out 0s;
+}
+
+input.bpm-input {
+	background:#34495E;
+	color:#fff;
+	font-size:1.5em;
+	border:none;
+	width:30%;
+	text-align:center;
+}
+
+.slow-down:hover, .speed-up:hover {
+	background:#fff;
+	color:#1A1C27;
+
+} 
+
+.bpm-control span{
+	margin: 28px 0 0 -85px;
+	position:absolute;
+	font-size:0.6em;
+	color:#fff;
+}
+
+
+/* Other options */
+.n_beats_change {
+	border-radius:20px;
+	background:#222533;
+	color:#fff;
+	font-size:1.5em;
+	width:30px;
+	height:30px;
+	display:block;
+	text-align:center;
+	cursor:pointer;
+}
+
+.n_beats_change:after {
+	content:"♩";
+}
+
+.options {
+    margin-top: 240px;
+	margin-left: 137px;
+	position:absolute;
+}
+
+.per_measure {
+	background:#222533;
+	padding:10px;
+	display:none;
+	width:80px;
+	height:60px;
+	font-size:.75em;
+	color:#ddd;
+	margin-left:-30px;
+	margin-top: 5px;
+	z-index:9999;
+	text-align:center;
+	border-radius:5px;
+}
+
+/* On/Off Switch */
+.metronome_switcher {
+    margin-top: 330px;
+	margin-left:77px;
+	position:absolute;	
+}
+
+label.switcher {
+  position: relative;
+  display: block;
+  height: 20px;
+  width: 44px;
+  background: #222533;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+label.switcher:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  background: #ddd;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+
+label.switcher:active:after { transform: scale(1.15, 0.85); }
+
+input.switcher:checked ~ label { background: #222533; }
+
+input.switcher:checked ~ label:after {
+  left: 20px;
+  background: #21C2F8;
+}
+
+input.switcher:disabled ~ label {
+  background: #d5d5d5;
+  pointer-events: none;
+}
+
+input.switcher:disabled ~ label:after { background: #bcbdbc; }
+
+.hidden { display: none; }
+
+
+/* Show Beats */
+.beats {
+	width:325px;
+	text-align: center;
+	padding:10px;
+    margin-top: 360px;
+	margin-left:-75px;
+	position:absolute;
+}
+
+.beatcount .beat {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 0 6px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.beatcount .active {
+  background: #34495E;
+}
+
+.current_beat {
+	color:#fff;
+	font-size:1.5em;
+	text-align:center;
+}
